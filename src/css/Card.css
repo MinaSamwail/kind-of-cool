@@ -1,0 +1,55 @@
+.card{
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
+
+.card__picture{
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+}
+
+.card__description{
+    margin: 50px;
+    /* text-align: center; */
+}
+
+.card__description > h2{
+    font-size: 35px;
+    font-weight: 100;
+}
+
+.card__description > h3{
+    font-size: 22px;
+    font-weight: 100;
+}
+
+.card__description > input {
+    border: none;
+    background-color: white;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+}
+
+.card__description > input:hover {
+    background-color: black;
+      color: white;
+      border-radius: 5px;
+}
+
+/* .card__btn{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+} */
+
+.carousel {
+    text-align: center;
+}
+
