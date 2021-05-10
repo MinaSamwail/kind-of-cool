@@ -1,0 +1,38 @@
+.navMain{
+    position: relative;
+    margin-top: 15px;
+}
+
+.navMain__up{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 40px;
+}
+
+.navMain__down {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navMain__down a, .navMain__up a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.navMain__sousCategories {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    /* left: 315px; */
+    left: 300px;
+    align-items: center;
+    text-align: center;
+    z-index: 40;
+}
+
+.navMain__sousCategories a{
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+}
