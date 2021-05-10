@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../css/Card.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import "../css/Product.css";
 
 function Product(props) {
   console.log("Props", props);
@@ -10,15 +10,15 @@ function Product(props) {
   const [alert, setAlert] = useState("");
 
   return (
-    <div className="card">
-      <div className="card__picture">
+    <div className="product">
+      <div className="product__picture">
         <Carousel>
           {images.map((image) => {
             return <img key={image} src={image} alt={name} />;
           })}
         </Carousel>
       </div>
-      <div className="card__description">
+      <div className="product__description">
         <h2>{name}</h2>
         <h3>{price}€</h3>
         {/* <input
