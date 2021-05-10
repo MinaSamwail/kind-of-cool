@@ -3,6 +3,8 @@ import NavMain from "./components/NavMain";
 import Home from "./views/Home";
 import Product from "./components/Product";
 
+// import { commerce } from "../lib/commerce";
+
 function App() {
   return (
     <div className="app">
