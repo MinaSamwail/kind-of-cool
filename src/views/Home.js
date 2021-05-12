@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import "../css/Home.css";
 import { Link } from "react-router-dom";
-
 import { commerce } from "../lib/commerce";
 
 function Home() {
@@ -15,29 +14,25 @@ function Home() {
 
   useEffect(() => {
     fetchProducts();
-    // fetchCart();
   }, []);
-
-  //   console.log("Products", products);
 
   return (
     <div className="home">
-      <Grid container justify="center" spacing={4}>
+      <Grid container justify="center" spacing={3}>
         {products.map((product) => {
-          console.log("un produit", product);
-
           return (
             <Link
               key={product.id}
               className="home__link"
               to={{
+                // changer le lien product en nom du produit
                 pathname: `/product`,
                 query: {
                   product: { product },
                 },
               }}
             >
-              <Grid item xs={12} sm={6} md={4} lg={3}>
+              <Grid container item xs={12} sm={6} md={4} lg={3}>
                 <img
                   className="home__image"
                   src={product.media.source}

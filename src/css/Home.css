@@ -6,11 +6,12 @@
     margin: 0 40px;
 }
 
-/* .home__image{
+.home__image{
     object-fit: fill;
-    width: 19%;
-    margin: 30px 40px;
-} */
+    height: auto;
+    width: 275px;
+    margin: 0px 30px;
+}
 
 .home__link{
     position: relative;

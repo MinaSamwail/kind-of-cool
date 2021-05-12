@@ -4,9 +4,9 @@ import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { IconButton, Badge } from "@material-ui/core";
 import "../css/NavMain.css";
 
-function NavMain() {
+function NavMain(props) {
   const [panier, setPanier] = useState([]);
-
+  console.log("Props", props);
   return (
     <div className="navMain">
       <div className="navMain__up">
