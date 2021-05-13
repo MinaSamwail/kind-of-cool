@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { IconButton, Badge } from "@material-ui/core";
 import "../css/NavMain.css";
 
-function NavMain(props) {
-  const [panier, setPanier] = useState([]);
-  console.log("Props", props);
+function NavMain(totalItems) {
+  // console.log("totalItems", totalItems);
   return (
     <div className="navMain">
       <div className="navMain__up">
@@ -16,7 +15,7 @@ function NavMain(props) {
 
         <Link to="/panier">
           <IconButton edge="start" color="inherit">
-            <Badge badgeContent={2} color="secondary">
+            <Badge badgeContent={totalItems.totalItems} color="secondary">
               <LocalMallIcon fontSize="large" />
             </Badge>
           </IconButton>

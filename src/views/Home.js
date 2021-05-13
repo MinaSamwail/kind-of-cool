@@ -1,34 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Grid } from "@material-ui/core";
-import "../css/Home.css";
 import { Link } from "react-router-dom";
-import { commerce } from "../lib/commerce";
+import "../css/Home.css";
 
-function Home() {
-  const [products, setProducts] = useState([]);
-
-  const fetchProducts = async () => {
-    let { data } = await commerce.products.list();
-    setProducts(data);
-  };
-
-  useEffect(() => {
-    fetchProducts();
-  }, []);
+function Home(products) {
+  // console.log("je veux mon info", products);
 
   return (
     <div className="home">
       <Grid container justify="center" spacing={3}>
-        {products.map((product) => {
+        {products.products.map((product) => {
           return (
             <Link
               key={product.id}
               className="home__link"
               to={{
-                // changer le lien product en nom du produit
-                pathname: `/product`,
+                pathname: `/product/${product.name}`,
                 query: {
                   product: { product },
+                  handleAddToCart: { products },
                 },
               }}
             >
