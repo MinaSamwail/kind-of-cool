@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import NavMain from "./components/NavMain";
 import Home from "./views/Home";
 import Product from "./components/Product";
+import Panier from "./components/Panier";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -30,13 +31,18 @@ function App() {
     fetchCart();
   }, []);
 
-  console.log("cart", cart);
+  // console.log("cart", cart);
 
   return (
     <div className="app">
       <NavMain totalItems={cart.total_items} />
       <Switch>
+        <Route exact path="/panier">
+          <Panier cart={cart} />
+        </Route>
+
         <Route exact path="/product/:name" component={Product} />
+
         <Route exact path="/">
           <Home products={products} onAddToCart={addToCart} />
         </Route>
