@@ -5,7 +5,9 @@ import { IconButton, Badge } from "@material-ui/core";
 import "../css/NavMain.css";
 
 function NavMain(totalItems) {
-  // console.log("totalItems", totalItems);
+  let total = totalItems.totalItems;
+  console.log("totalItems", totalItems);
+
   return (
     <div className="navMain">
       <div className="navMain__up">
@@ -15,7 +17,7 @@ function NavMain(totalItems) {
 
         <Link to="/panier">
           <IconButton edge="start" color="inherit">
-            <Badge badgeContent={totalItems.totalItems} color="secondary">
+            <Badge badgeContent={total} color="secondary">
               <LocalMallIcon fontSize="large" />
             </Badge>
           </IconButton>

@@ -23,7 +23,16 @@ function App() {
 
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
-    // setCart(await commerce.cart.delete());
+  };
+
+  const handleRemoveFromCart = async (productId) => {
+    const { cart } = await commerce.cart.remove(productId);
+    setCart(cart);
+  };
+
+  const handleEmptyAll = async () => {
+    const { cart } = await commerce.cart.empty();
+    setCart(cart);
   };
 
   useEffect(() => {
@@ -38,7 +47,11 @@ function App() {
       <NavMain totalItems={cart.total_items} />
       <Switch>
         <Route exact path="/panier">
-          <Panier cart={cart} />
+          <Panier
+            cart={cart}
+            handleRemoveFromCart={handleRemoveFromCart}
+            handleEmptyAll={handleEmptyAll}
+          />
         </Route>
 
         <Route exact path="/product/:name" component={Product} />
