@@ -10,18 +10,24 @@ function NavMain(totalItems) {
 
   return (
     <div className="navMain">
-      <div className="navMain__up">
+      <div className="navMain__left">
         <Link to="/">
           <h1>Kind of Cool - Friperie en Ligne</h1>
         </Link>
 
-        <Link to="/panier">
-          <IconButton edge="start" color="inherit">
-            <Badge badgeContent={total} color="secondary">
-              <LocalMallIcon fontSize="large" />
-            </Badge>
-          </IconButton>
-        </Link>
+        <div className="navMain__right">
+          <Link to="/">
+            <h3>Home</h3>
+          </Link>
+
+          <Link to="/panier">
+            <IconButton edge="start" color="inherit">
+              <Badge badgeContent={total} color="secondary">
+                <LocalMallIcon fontSize="large" />
+              </Badge>
+            </IconButton>
+          </Link>
+        </div>
       </div>
     </div>
   );

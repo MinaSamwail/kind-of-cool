@@ -4,6 +4,7 @@ import { Carousel } from "react-responsive-carousel";
 import "../css/Product.css";
 
 function Product(props) {
+  // console.log("Product", props);
   const { name, price, description, id } = props.location.query.product.product;
   const images = props.location.query.product.product.assets;
   const addToCart = props.location.query.handleAddToCart.products.onAddToCart;

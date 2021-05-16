@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
 
 function Panier(cart) {
-  console.log("CART", cart);
-  const isEmpty = cart.cart.line_items.length == 0;
+  // console.log("CART", cart);
+  const isEmpty = cart.cart.line_items.length === 0;
 
   const EmptyCard = () => {
     return (

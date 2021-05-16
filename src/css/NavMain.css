@@ -3,36 +3,21 @@
     margin-top: 15px;
 }
 
-.navMain__up{
+.navMain__left{
     display: flex;
     justify-content: space-between;
     margin: 0 40px;
 }
 
-.navMain__down {
+.navMain__right {
     display: flex;
-    justify-content: space-evenly;
 }
 
-.navMain__down a, .navMain__up a{
+.navMain__right a, .navMain__left a{
     text-decoration: none;
     color: black;
 }
 
-
-.navMain__sousCategories {
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    /* left: 315px; */
-    left: 300px;
-    align-items: center;
-    text-align: center;
-    z-index: 40;
-}
-
-.navMain__sousCategories a{
-    text-decoration: none;
-    color: black;
-    margin-right: 10px;
+.navMain__right > a > h3 {
+    margin-right: 30px;
 }

@@ -9,7 +9,7 @@ import Panier from "./components/Panier";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
-  // console.log("prooood", products);
+  console.log("prooood", products);
 
   const fetchProducts = async () => {
     let { data } = await commerce.products.list();
@@ -40,7 +40,20 @@ function App() {
     fetchCart();
   }, []);
 
-  // console.log("cart", cart);
+  const triPrixCroissant = () => {
+    const sortedDown = [...products].sort((articleA, articleB) => {
+      console.log("click", articleA);
+      return articleA.price.raw - articleB.price.raw;
+    });
+    setProducts(sortedDown);
+  };
+
+  const triPrixDecroissant = () => {
+    const sortedUp = [...products].sort((articleA, articleB) => {
+      return articleB.price.raw - articleA.price.raw;
+    });
+    setProducts(sortedUp);
+  };
 
   return (
     <div className="app">
@@ -57,7 +70,12 @@ function App() {
         <Route exact path="/product/:name" component={Product} />
 
         <Route exact path="/">
-          <Home products={products} onAddToCart={addToCart} />
+          <Home
+            products={products}
+            onAddToCart={addToCart}
+            triPrixCroissant={triPrixCroissant}
+            triPrixDecroissant={triPrixDecroissant}
+          />
         </Route>
       </Switch>
     </div>
