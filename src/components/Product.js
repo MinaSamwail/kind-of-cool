@@ -4,10 +4,12 @@ import { Carousel } from "react-responsive-carousel";
 import "../css/Product.css";
 
 function Product(props) {
-  // console.log("Product", props);
+  console.log("Product", props);
   const { name, price, description, id } = props.location.query.product.product;
   const images = props.location.query.product.product.assets;
   const addToCart = props.location.query.handleAddToCart.products.onAddToCart;
+  const stock = props.location.query.product.product.inventory.available;
+
   const [alert, setAlert] = useState("");
 
   return (
@@ -23,17 +25,21 @@ function Product(props) {
         <h2>{name}</h2>
         <h3>{price.formatted}€</h3>
         <p dangerouslySetInnerHTML={{ __html: description }} />
-        <input
-          type="submit"
-          value="Ajouter au panier"
-          onClick={() =>
-            addToCart(
-              id,
-              1,
-              setAlert("Cet article a bien été ajouté à votre panié")
-            )
-          }
-        />
+        {stock === 1 ? (
+          <input
+            type="submit"
+            value="Ajouter au panier"
+            onClick={() =>
+              addToCart(
+                id,
+                1,
+                setAlert("Cet article a bien été ajouté à votre panié")
+              )
+            }
+          />
+        ) : (
+          <p>Out of Stock</p>
+        )}
         <h3>{alert}</h3>
       </div>
     </div>

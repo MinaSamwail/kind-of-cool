@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 function Home(products) {
-  console.log("je veux mon info", products);
+  // console.log("PRODUCTS", products);
 
   return (
     <div>
@@ -27,17 +27,32 @@ function Home(products) {
                   },
                 }}
               >
-                <Grid container item xs={12} sm={6} md={4} lg={3}>
-                  <img
-                    className="home__image"
-                    src={product.media.source}
-                    alt="vetement"
-                  />
-                  <div className="overlay">
-                    <p className="text-bloc">{product.price.raw}€</p>
-                    <p className="text">{product.name}</p>
-                  </div>
-                </Grid>
+                {product.inventory.available === 1 ? (
+                  <Grid container item xs={12} sm={6} md={4} lg={3}>
+                    <img
+                      className="home__image"
+                      src={product.media.source}
+                      alt="vetement"
+                    />
+                    <div className="overlay">
+                      <p className="text-bloc">{product.price.raw}€</p>
+                      <p className="text">{product.name}</p>
+                    </div>
+                  </Grid>
+                ) : (
+                  <Grid container item xs={12} sm={6} md={4} lg={3}>
+                    <img
+                      className="home__image"
+                      src={product.media.source}
+                      alt="vetement"
+                    />
+                    <div className="overlay">
+                      <p>out of stock</p>
+                      <p className="text-bloc">{product.price.raw}€</p>
+                      <p className="text">{product.name}</p>
+                    </div>
+                  </Grid>
+                )}
               </Link>
             );
           })}
