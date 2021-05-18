@@ -9,7 +9,6 @@ function Product(props) {
   const images = props.location.query.product.product.assets;
   const addToCart = props.location.query.handleAddToCart.products.onAddToCart;
   const stock = props.location.query.product.product.inventory.available;
-
   const [alert, setAlert] = useState("");
 
   return (

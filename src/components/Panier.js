@@ -49,6 +49,8 @@ function Panier(cart) {
               Empty Cart
             </Button>
             <Button
+              component={Link}
+              to="/checkout"
               size="large"
               type="button"
               variant="contained"

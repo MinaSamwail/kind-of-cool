@@ -5,6 +5,7 @@ import NavMain from "./components/NavMain";
 import Home from "./views/Home";
 import Product from "./components/Product";
 import Panier from "./components/Panier";
+import Checkout from "./components/CheckoutForm/Checkout";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -59,6 +60,10 @@ function App() {
     <div className="app">
       <NavMain totalItems={cart.total_items} />
       <Switch>
+        <Route exact path="/checkout">
+          <Checkout />
+        </Route>
+
         <Route exact path="/panier">
           <Panier
             cart={cart}
