@@ -61,7 +61,7 @@ function App() {
       <NavMain totalItems={cart.total_items} />
       <Switch>
         <Route exact path="/checkout">
-          <Checkout />
+          <Checkout cart={cart} />
         </Route>
 
         <Route exact path="/panier">
