@@ -28,17 +28,19 @@
 
 .product__description > input {
     border: none;
-    background-color: white;
+    background-color: #B83D5E;
     font-weight: bold;
     font-size: 17px;
     margin-top: 10px;
+    padding: 15px;
+    cursor: pointer;
 }
 
-.product__description > input:hover {
+/* .product__description > input:hover {
     background-color: black;
       color: white;
       border-radius: 5px;
-}
+} */
 
 /* .card__btn{
     border: none;

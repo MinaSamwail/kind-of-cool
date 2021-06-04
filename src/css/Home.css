@@ -1,4 +1,4 @@
- .home{
+.home__product{
   margin-top: 80px;
 } 
 
@@ -7,10 +7,11 @@
 }
 
 .home__image{
-    object-fit: fill;
+    object-fit: contain;
     height: auto;
     width: 275px;
     margin: 0px 30px;
+   
 }
 
 .home__link{
@@ -66,10 +67,11 @@
     font-size: 17px;
   }
 
-  .home__btn> button:hover{
+  /* .home__btn> button:hover{
       background-color: black;
       color: white;
       border-radius: 5px;
-  }
+  } */
+
 
   

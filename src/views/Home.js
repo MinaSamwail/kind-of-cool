@@ -4,15 +4,13 @@ import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 function Home(products) {
-  // console.log("PRODUCTS", products);
-
   return (
-    <div>
+    <div className="home">
       <div className="home__btn">
         <button onClick={products.triPrixCroissant}>Prix croissant</button>
         <button onClick={products.triPrixDecroissant}>Prix décroissant</button>
       </div>
-      <div className="home">
+      <div className="home__product">
         <Grid container justify="center" spacing={3}>
           {products.products.map((product) => {
             return (

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import "../css/Panier.css";
 
 function Panier(cart) {
   // console.log("CART", cart);
@@ -8,7 +9,7 @@ function Panier(cart) {
 
   const EmptyCard = () => {
     return (
-      <div>
+      <div className="emptyCart">
         <h2>Votre Panier est actuellement vide !</h2>
         <Link to="/">Retour à la boutique</Link>
       </div>

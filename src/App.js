@@ -6,11 +6,13 @@ import Home from "./views/Home";
 import Product from "./components/Product";
 import Panier from "./components/Panier";
 import Checkout from "./components/CheckoutForm/Checkout";
+import "./css/App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
-  console.log("prooood", products);
+  const [order, setOrder] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   const fetchProducts = async () => {
     let { data } = await commerce.products.list();
@@ -36,6 +38,25 @@ function App() {
     setCart(cart);
   };
 
+  const refreshCart = async () => {
+    const newCart = await commerce.cart.refresh();
+    setCart(newCart);
+  };
+
+  const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+    try {
+      const incomingOdrder = await commerce.checkout.capture(
+        checkoutTokenId,
+        newOrder
+      );
+
+      setOrder(incomingOdrder);
+      refreshCart();
+    } catch (error) {
+      setErrorMessage(error.data.error.message);
+    }
+  };
+
   useEffect(() => {
     fetchProducts();
     fetchCart();
@@ -43,7 +64,6 @@ function App() {
 
   const triPrixCroissant = () => {
     const sortedDown = [...products].sort((articleA, articleB) => {
-      console.log("click", articleA);
       return articleA.price.raw - articleB.price.raw;
     });
     setProducts(sortedDown);
@@ -61,7 +81,12 @@ function App() {
       <NavMain totalItems={cart.total_items} />
       <Switch>
         <Route exact path="/checkout">
-          <Checkout cart={cart} />
+          <Checkout
+            cart={cart}
+            order={order}
+            onCaptureCheckout={handleCaptureCheckout}
+            error={errorMessage}
+          />
         </Route>
 
         <Route exact path="/panier">

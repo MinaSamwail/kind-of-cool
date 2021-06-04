@@ -10,10 +10,17 @@ function NavMain(totalItems) {
 
   return (
     <div className="navMain">
-      <div className="navMain__left">
-        <Link to="/">
-          <h1>Kind of Cool - Friperie en Ligne</h1>
-        </Link>
+      <div className="navMain__up">
+        <div className="navMain__left">
+          <h3>Categorie 1</h3>
+          <h3>Categorie 2</h3>
+        </div>
+
+        <div className="navMain__center">
+          <Link to="/">
+            <img src="../img/kind_of_cool_logo.jpeg" alt="logo" />
+          </Link>
+        </div>
 
         <div className="navMain__right">
           <Link to="/">
@@ -29,6 +36,7 @@ function NavMain(totalItems) {
           </Link>
         </div>
       </div>
+      <div className="navMain__down"></div>
     </div>
   );
 }

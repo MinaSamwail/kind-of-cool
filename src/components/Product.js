@@ -4,13 +4,15 @@ import { Carousel } from "react-responsive-carousel";
 import "../css/Product.css";
 
 function Product(props) {
-  console.log("Product", props);
+  // redirect if !props.location.query.product.product
+  //history push
   const { name, price, description, id } = props.location.query.product.product;
+  const linkVinted = props.location.query.product.product.thank_you_url;
   const images = props.location.query.product.product.assets;
   const addToCart = props.location.query.handleAddToCart.products.onAddToCart;
   const stock = props.location.query.product.product.inventory.available;
   const [alert, setAlert] = useState("");
-
+  console.log("PROPS", props);
   return (
     <div className="product">
       <div className="product__picture">
@@ -23,6 +25,7 @@ function Product(props) {
       <div className="product__description">
         <h2>{name}</h2>
         <h3>{price.formatted}€</h3>
+        <p>Description</p>
         <p dangerouslySetInnerHTML={{ __html: description }} />
         {stock === 1 ? (
           <input
@@ -39,6 +42,9 @@ function Product(props) {
         ) : (
           <p>Out of Stock</p>
         )}
+        <a href={linkVinted}>
+          <img src="../img/Vinted Logo.png" alt="v-logo" />
+        </a>
         <h3>{alert}</h3>
       </div>
     </div>
