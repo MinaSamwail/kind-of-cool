@@ -51,6 +51,10 @@
     margin-top: 10px;
 } */
 
+.product__logo > a > img {
+    width: 70px;
+}
+
 .carousel {
     text-align: center;
 }

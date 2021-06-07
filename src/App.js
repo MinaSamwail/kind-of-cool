@@ -8,6 +8,8 @@ import Panier from "./components/Panier";
 import Checkout from "./components/CheckoutForm/Checkout";
 import "./css/App.css";
 
+import Accueil from "./views/Accueil";
+
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
@@ -79,6 +81,7 @@ function App() {
   return (
     <div className="app">
       <NavMain totalItems={cart.total_items} />
+
       <Switch>
         <Route exact path="/checkout">
           <Checkout
@@ -99,13 +102,16 @@ function App() {
 
         <Route exact path="/product/:name" component={Product} />
 
-        <Route exact path="/">
+        <Route exact path="/product">
           <Home
             products={products}
             onAddToCart={addToCart}
             triPrixCroissant={triPrixCroissant}
             triPrixDecroissant={triPrixDecroissant}
           />
+        </Route>
+        <Route exact path="/">
+          <Accueil />
         </Route>
       </Switch>
     </div>

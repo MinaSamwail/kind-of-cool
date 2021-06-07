@@ -27,6 +27,7 @@ function Product(props) {
         <h3>{price.formatted}€</h3>
         <p>Description</p>
         <p dangerouslySetInnerHTML={{ __html: description }} />
+
         {stock === 1 ? (
           <input
             type="submit"
@@ -40,12 +41,20 @@ function Product(props) {
             }
           />
         ) : (
-          <p>Out of Stock</p>
+          <div>
+            <p>Out of Stock</p>
+            {/* <input type="submit" value="Ajouter au panier" disabled /> */}
+          </div>
         )}
-        <a href={linkVinted}>
-          <img src="../img/Vinted Logo.png" alt="v-logo" />
-        </a>
         <h3>{alert}</h3>
+        <div className="product__logo">
+          <a href={linkVinted}>
+            <img src="../img/Vinted_Logo.png" alt="v-logo" />
+          </a>
+          <a href={linkVinted}>
+            <img src="../img/vestiaire_collective_logo.png" alt="v-logo" />
+          </a>
+        </div>
       </div>
     </div>
   );
