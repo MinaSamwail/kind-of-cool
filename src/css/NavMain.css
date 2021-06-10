@@ -1,5 +1,4 @@
 .navMain__up{
-    /* position: relative; */
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -9,10 +8,14 @@
     display: flex;
 }
 
-.navMain__center > a >img{
-    width: 100px;
-    height: auto;
+.navMain__left > a > img {
+    width: 30%;
 }
+
+/* .navMain__center > a >img{
+    width: 200px;
+    height: auto;
+} */
 
 .navMain__right {
     display: flex;
@@ -28,7 +31,7 @@
 }
 
 .navMain__down {
-    padding: 10px;
+    padding: 15px;
     background-color: #B83D5E;
     margin-bottom: 10px;
 }

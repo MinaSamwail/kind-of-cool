@@ -1,5 +1,5 @@
 .home__product{
-  margin-top: 80px;
+  margin-top: 50px;
 } 
 
 .home__title{
@@ -8,14 +8,15 @@
 
 .home__image{
     object-fit: contain;
-    height: auto;
-    width: 275px;
-    margin: 0px 30px;
-   
+    /* width: 350px; */
+    max-width: 350px;
+	  max-height: 350px;
+    margin: 20px 0 0 60px;
 }
 
 .home__link{
     position: relative;
+    /* width: 277px; */
 } 
 
 .overlay {
@@ -24,12 +25,12 @@
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 35px;
+    top: 20px;
     bottom: 20px;
-    left: 70px;
+    left: 60px;
     right: 20px;
-    height: 47.2vh;
-    width: 74%;
+    height: 48vh;
+    width: 82%;
     opacity: 0;
     transition: .5s ease;
     /* background-color: #ee7c69; */

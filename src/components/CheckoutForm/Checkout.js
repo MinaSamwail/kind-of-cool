@@ -7,7 +7,6 @@ import {
   StepLabel,
   Typography,
   CircularProgress,
-  Divider,
   Button,
 } from "@material-ui/core";
 import AddressForm from "./AddressForm";
