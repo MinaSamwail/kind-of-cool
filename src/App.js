@@ -15,7 +15,7 @@ function App() {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-
+  // console.log("CART", cart);
   const fetchProducts = async () => {
     let { data } = await commerce.products.list();
     setProducts(data);
@@ -23,6 +23,8 @@ function App() {
 
   const addToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
+    // console.log("productId", productId);
+    // console.log("ITEM", item);
     setCart(item.cart);
   };
 
@@ -80,7 +82,7 @@ function App() {
 
   return (
     <div className="app">
-      <NavMain totalItems={cart.total_items} />
+      <NavMain totalItems={cart.total_unique_items} />
 
       <Switch>
         <Route exact path="/checkout">
@@ -104,12 +106,14 @@ function App() {
 
         <Route exact path="/product">
           <Home
+            cart={cart}
             products={products}
             onAddToCart={addToCart}
             triPrixCroissant={triPrixCroissant}
             triPrixDecroissant={triPrixDecroissant}
           />
         </Route>
+
         <Route exact path="/">
           <Accueil />
         </Route>

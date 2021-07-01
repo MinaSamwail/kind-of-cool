@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../css/Home.css";
 
 function Home(products) {
+  // console.log("prooods", products);
   return (
     <div className="home">
       <div className="home__btn">
@@ -20,6 +21,7 @@ function Home(products) {
                 to={{
                   pathname: `/product/${product.name}`,
                   query: {
+                    cart: { products },
                     product: { product },
                     handleAddToCart: { products },
                   },

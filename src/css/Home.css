@@ -6,17 +6,15 @@
     margin: 0 40px;
 }
 
-.home__image{
-    object-fit: contain;
-    /* width: 350px; */
-    max-width: 350px;
-	  max-height: 350px;
-    margin: 20px 0 0 60px;
-}
+ .home__image{
+  width: 382%;
+  height: 351px;
+} 
 
 .home__link{
     position: relative;
-    /* width: 277px; */
+    width: 276px;
+    margin: 20px 0 0 60px
 } 
 
 .overlay {
@@ -25,12 +23,12 @@
     align-items: center;
     flex-direction: column;
     position: absolute;
-    top: 20px;
+    top: 0px;
     bottom: 20px;
-    left: 60px;
+    left: 1px;
     right: 20px;
     height: 48vh;
-    width: 82%;
+    width: 95%;
     opacity: 0;
     transition: .5s ease;
     /* background-color: #ee7c69; */

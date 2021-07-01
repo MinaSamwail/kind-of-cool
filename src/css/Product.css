@@ -51,8 +51,12 @@
     margin-top: 10px;
 } */
 
+.product__logo{
+    margin: 10px 0 0 0;
+}
+
 .product__logo > a > img {
-    width: 70px;
+    width: 54px;
     margin-right: 29px;
 }
 

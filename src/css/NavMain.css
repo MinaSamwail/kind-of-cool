@@ -8,8 +8,12 @@
     display: flex;
 }
 
-.navMain__left > a > img {
+.navMain__left > a {
     width: 30%;
+}
+
+.navMain__left > a > img {
+    width: 100%;
 }
 
 /* .navMain__center > a >img{
@@ -19,6 +23,7 @@
 
 .navMain__right {
     display: flex;
+    align-items: center;
 }
 
 .navMain__right a, .navMain__left a{
@@ -27,7 +32,7 @@
 }
 
 .navMain__right > a > h3 {
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .navMain__down {

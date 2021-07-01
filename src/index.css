@@ -1,12 +1,12 @@
-/* @font-face  {
-  font-family: 'bauhaus-93';
-  src: url('./css/font/bauhaus-93/BAUHS93.ttf');
+ @font-face  {
+  font-family: 'Oswald';
+  src: url('./css/font/Oswald/static/Oswald-Regular.ttf');
 }
 
 *{
-  font-family: 'bauhaus-93' ;
+  font-family: 'Oswald' ;
   margin: 0;
-} */
+} 
 
 body {
   margin: 0;

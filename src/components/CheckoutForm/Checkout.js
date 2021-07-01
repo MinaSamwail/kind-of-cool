@@ -103,6 +103,7 @@ function Checkout(cart) {
         <CircularProgress />
       </div>
     );
+
   if (cart.error) {
     <>
       <Typography variant="h5">Error:{cart.error}</Typography>
