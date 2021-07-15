@@ -30,6 +30,10 @@ function NavMain(totalItems) {
             <h3>Home</h3>
           </Link>
 
+          <Link to="/product">
+            <h3>Boutique</h3>
+          </Link>
+
           <Link to="/panier">
             <IconButton edge="start" color="inherit">
               <Badge badgeContent={total} color="secondary">

@@ -4,7 +4,9 @@ import { Button } from "@material-ui/core";
 import "../css/Panier.css";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 
-function Panier(cart) {
+// Quand l'achat a ete fait il faut que le panier soit vidé et que le stock se mette a jour
+
+const Panier = (cart) => {
   console.log("CART", cart);
   const isEmpty =
     Object.keys(cart.cart).length && cart.cart.line_items.length === 0;
@@ -39,7 +41,6 @@ function Panier(cart) {
             <tbody>
               {cart.cart.line_items.map((item) => (
                 <tr key={item.product_id}>
-                  {console.log("ITEM DU PANIER", item.product_id)}
                   <td className="filledCart__item">
                     <img src={item.media.source} alt={item.name} />
 
@@ -86,31 +87,6 @@ function Panier(cart) {
             </div>
           </table>
         </div>
-
-        {/* <div className="filledCart__subtotal">
-          <h3>Subtotal : {cart.cart.subtotal.formatted}€</h3>
-          <div className="filledCart__btn">
-            <Button
-              size="large"
-              type="button"
-              variant="contained"
-              color="secondary"
-              onClick={cart.handleEmptyAll}
-            >
-              Empty Cart
-            </Button>
-            <Button
-              component={Link}
-              to="/checkout"
-              size="large"
-              type="button"
-              variant="contained"
-              color="primary"
-            >
-              Checkout
-            </Button>
-          </div>
-        </div> */}
       </div>
     );
   };
@@ -118,6 +94,6 @@ function Panier(cart) {
   return (
     <div className="panier">{isEmpty ? <EmptyCard /> : <FilledCart />}</div>
   );
-}
+};
 
 export default Panier;

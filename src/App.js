@@ -6,8 +6,6 @@ import Home from "./views/Home";
 import Product from "./components/Product";
 import Panier from "./components/Panier";
 import Checkout from "./components/CheckoutForm/Checkout";
-import "./css/App.css";
-
 import Accueil from "./views/Accueil";
 
 function App() {
@@ -23,8 +21,6 @@ function App() {
 
   const addToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
-    // console.log("productId", productId);
-    // console.log("ITEM", item);
     setCart(item.cart);
   };
 
@@ -47,16 +43,18 @@ function App() {
     setCart(newCart);
   };
 
+  // cette fonction ne marche pas elle est a revoir
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
     try {
       const incomingOdrder = await commerce.checkout.capture(
         checkoutTokenId,
         newOrder
       );
-
       setOrder(incomingOdrder);
+      console.log("newOrder", incomingOdrder);
       refreshCart();
     } catch (error) {
+      console.log("error", error);
       setErrorMessage(error.data.error.message);
     }
   };

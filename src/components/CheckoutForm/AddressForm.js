@@ -12,24 +12,28 @@ import FormInput from "./FormInput";
 import { useForm, FormProvider } from "react-hook-form";
 import { commerce } from "../../lib/commerce";
 
-function AddressForm(checkoutToken) {
+const AddressForm = (checkoutToken) => {
+  // console.log("checkoutToken", checkoutToken);
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
   const [shippingSubdivision, setShippingSubdivision] = useState("");
   const [shippingOptions, setShippingOptions] = useState([]);
   const [shippingOption, setShippingOption] = useState("");
+  const methods = useForm();
 
   const countries = Object.entries(shippingCountries).map(([code, name]) => ({
     id: code,
     label: name,
   }));
+
   const subdivisions = Object.entries(shippingSubdivisions).map(
     ([code, name]) => ({
       id: code,
       label: name,
     })
   );
+
   const options = shippingOptions.map((sO) => ({
     id: sO.id,
     label: `${sO.description} - (${sO.price.formatted_with_symbol})`,
@@ -83,8 +87,6 @@ function AddressForm(checkoutToken) {
         shippingSubdivision
       );
   }, [shippingSubdivision]);
-
-  const methods = useForm();
 
   return (
     <>
@@ -168,6 +170,6 @@ function AddressForm(checkoutToken) {
       </FormProvider>
     </>
   );
-}
+};
 
 export default AddressForm;

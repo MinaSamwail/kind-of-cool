@@ -3,8 +3,7 @@ import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "../css/Home.css";
 
-function Home(products) {
-  // console.log("prooods", products);
+const Home = (products) => {
   return (
     <div className="home">
       <div className="home__btn">
@@ -35,8 +34,8 @@ function Home(products) {
                       alt="vetement"
                     />
                     <div className="overlay">
-                      <p className="text-bloc">{product.price.raw}€</p>
                       <p className="text">{product.name}</p>
+                      <p className="text-bloc">{product.price.raw}€</p>
                     </div>
                   </Grid>
                 ) : (
@@ -47,9 +46,9 @@ function Home(products) {
                       alt="vetement"
                     />
                     <div className="overlay">
-                      <p>out of stock</p>
-                      <p className="text-bloc">{product.price.raw}€</p>
                       <p className="text">{product.name}</p>
+                      <p className="text-bloc">{product.price.raw}€</p>
+                      <p className="overlay__stockOut">Out of stock</p>
                     </div>
                   </Grid>
                 )}
@@ -60,6 +59,6 @@ function Home(products) {
       </div>
     </div>
   );
-}
+};
 
 export default Home;

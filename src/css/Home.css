@@ -14,7 +14,7 @@
 .home__link{
     position: relative;
     width: 276px;
-    margin: 20px 0 0 60px
+    margin: 20px 0 0 40px
 } 
 
 .overlay {
@@ -50,7 +50,7 @@
 .text {
     color: white;
     font-size: 25px;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .home__btn{
@@ -69,11 +69,11 @@
     cursor: pointer;
   }
 
-  /* .home__btn> button:hover{
-      background-color: black;
-      color: white;
-      border-radius: 5px;
-  } */
+  .overlay__stockOut{
+    color: white;
+    font-size: 25px;
+    margin-top: 10px;
+  }
 
 
   

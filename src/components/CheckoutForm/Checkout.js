@@ -16,10 +16,11 @@ import useStyles from "./checkoutStyles";
 
 const steps = ["Shipping address", "Payment details"];
 
-function Checkout(cart) {
-  console.log("C.A.R.T", cart.order);
+const Checkout = (cart) => {
+  // console.log("C.A.R.T", cart);
   const classes = useStyles();
   const history = useHistory();
+
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken, setcheckoutToken] = useState(null);
   const [shippingData, setShippingData] = useState({});
@@ -34,8 +35,7 @@ function Checkout(cart) {
         });
         setcheckoutToken(token);
       } catch (error) {
-        // console.log(error);
-        history.pushState("/");
+        history.push("/");
       }
     };
     generateToken();
@@ -74,6 +74,7 @@ function Checkout(cart) {
     cart.order.customer ? (
       <>
         <div>
+          {console.log(cart.order)}
           <Typography variant="h5">
             Merci pour vos achats, {cart.order.customer.firstname}{" "}
             {cart.order.customer.lastname}
@@ -83,18 +84,7 @@ function Checkout(cart) {
           </Typography>
         </div>
         <br />
-        <Button component={Link} to="/" variant="outlined" type="button">
-          Back to home
-        </Button>
-      </>
-    ) : isFinished ? (
-      // No Credit card Logique
-      <>
-        <div>
-          <Typography variant="h5">Merci pour vos achats</Typography>
-        </div>
-        <br />
-        <Button component={Link} to="/" variant="outlined" type="button">
+        <Button component={Link} to="/product" variant="outlined" type="button">
           Back to home
         </Button>
       </>
@@ -107,6 +97,9 @@ function Checkout(cart) {
   if (cart.error) {
     <>
       <Typography variant="h5">Error:{cart.error}</Typography>
+      <Button component={Link} variant="outlined" type="button" to="/">
+        Back to home
+      </Button>
     </>;
   }
 
@@ -125,6 +118,7 @@ function Checkout(cart) {
               </Step>
             ))}
           </Stepper>
+
           {activeStep === steps.length ? (
             <Confirmation />
           ) : (
@@ -134,6 +128,6 @@ function Checkout(cart) {
       </main>
     </>
   );
-}
+};
 
 export default Checkout;

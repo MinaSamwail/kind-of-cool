@@ -10,18 +10,19 @@ import Review from "../CheckoutForm/Review";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-function PaymentForm(checkoutToken) {
-  console.log(checkoutToken);
-
+const PaymentForm = (checkoutToken) => {
   const handleSubmit = async (event, elements, stripe) => {
     event.preventDefault();
 
     if (!stripe || !elements) return;
+
     const cardElement = elements.getElement(CardElement);
+
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: cardElement,
     });
+
     if (error) {
       console.log(error);
     } else {
@@ -54,7 +55,6 @@ function PaymentForm(checkoutToken) {
         checkoutToken.checkoutToken.id,
         orderData
       );
-
       checkoutToken.timeout();
 
       checkoutToken.nextStep();
@@ -97,6 +97,6 @@ function PaymentForm(checkoutToken) {
       </Elements>
     </>
   );
-}
+};
 
 export default PaymentForm;
