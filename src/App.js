@@ -13,7 +13,7 @@ function App() {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  // console.log("CART", cart);
+
   const fetchProducts = async () => {
     let { data } = await commerce.products.list();
     setProducts(data);
@@ -43,7 +43,6 @@ function App() {
     setCart(newCart);
   };
 
-  // cette fonction ne marche pas elle est a revoir
   const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
     try {
       const incomingOdrder = await commerce.checkout.capture(
@@ -100,7 +99,12 @@ function App() {
           />
         </Route>
 
-        <Route exact path="/product/:name" component={Product} />
+        <Route
+          path="/product/:name"
+          render={(props) => (
+            <Product {...props} onAddToCart={addToCart} isAuthed={true} />
+          )}
+        />
 
         <Route exact path="/product">
           <Home

@@ -4,8 +4,6 @@ import { Button } from "@material-ui/core";
 import "../css/Panier.css";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 
-// Quand l'achat a ete fait il faut que le panier soit vidé et que le stock se mette a jour
-
 const Panier = (cart) => {
   console.log("CART", cart);
   const isEmpty =

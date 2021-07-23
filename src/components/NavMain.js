@@ -6,7 +6,6 @@ import "../css/NavMain.css";
 
 function NavMain(totalItems) {
   let total = totalItems.totalItems;
-  console.log("totalItems", totalItems);
 
   return (
     <div className="navMain">

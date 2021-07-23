@@ -3,7 +3,7 @@ import { Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "../css/Home.css";
 
-const Home = (products) => {
+const Home = ({ products, onAddToCart }) => {
   return (
     <div className="home">
       <div className="home__btn">
@@ -12,18 +12,15 @@ const Home = (products) => {
       </div>
       <div className="home__product">
         <Grid container justify="center" spacing={3}>
-          {products.products.map((product) => {
+          {products.map((product) => {
+            console.log("product", product);
             return (
               <Link
                 key={product.id}
                 className="home__link"
                 to={{
                   pathname: `/product/${product.name}`,
-                  query: {
-                    cart: { products },
-                    product: { product },
-                    handleAddToCart: { products },
-                  },
+                  state: { product },
                 }}
               >
                 {product.inventory.available === 1 ? (
