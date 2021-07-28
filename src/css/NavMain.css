@@ -40,3 +40,13 @@
     background-color: #B83D5E;
     margin-bottom: 10px;
 }
+
+@media (min-width: 375px) and (max-width: 700px) {
+    .navMain__left > a {
+        width: 70%;
+    }
+
+    .navMain__up{
+        padding: 15px 0;
+    }
+  }

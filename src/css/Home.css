@@ -77,4 +77,15 @@
 
  
 
+  @media (min-width: 375px) and (max-width: 700px) {
   
+    .home__product {
+      margin-top: 20px;
+  }
+  
+.home__link {
+  position: relative;
+  width: 287px;
+  margin: 20px 0 0 0px;
+}
+  }
