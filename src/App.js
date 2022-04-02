@@ -27,7 +27,7 @@ function App() {
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
   };
-
+  // COMMENT 3
   const handleRemoveFromCart = async (productId) => {
     const { cart } = await commerce.cart.remove(productId);
     setCart(cart);
