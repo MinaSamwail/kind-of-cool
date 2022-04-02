@@ -18,12 +18,12 @@ function App() {
     let { data } = await commerce.products.list();
     setProducts(data);
   };
-
+  // comment
   const addToCart = async (productId, quantity) => {
     const item = await commerce.cart.add(productId, quantity);
     setCart(item.cart);
   };
-
+  // comment 2
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
   };
