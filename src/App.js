@@ -69,7 +69,7 @@ function App() {
     });
     setProducts(sortedDown);
   };
-
+  // permet de trier les prix de facon decroissante
   const triPrixDecroissant = () => {
     const sortedUp = [...products].sort((articleA, articleB) => {
       return articleB.price.raw - articleA.price.raw;
