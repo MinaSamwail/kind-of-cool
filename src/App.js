@@ -32,7 +32,7 @@ function App() {
     const { cart } = await commerce.cart.remove(productId);
     setCart(cart);
   };
-
+  //Comment4
   const handleEmptyAll = async () => {
     const { cart } = await commerce.cart.empty();
     setCart(cart);
