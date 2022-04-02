@@ -13,7 +13,7 @@ import { useForm, FormProvider } from "react-hook-form";
 import { commerce } from "../../lib/commerce";
 
 const AddressForm = (checkoutToken) => {
-  // console.log("checkoutToken", checkoutToken);
+  console.log("checkoutToken", checkoutToken);
   const [shippingCountries, setShippingCountries] = useState([]);
   const [shippingCountry, setShippingCountry] = useState("");
   const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
