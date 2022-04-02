@@ -11,18 +11,10 @@ function NavMain(totalItems) {
     <div className="navMain">
       <div className="navMain__up">
         <div className="navMain__left">
-          {/* <h3>Categorie 1</h3>
-          <h3>Categorie 2</h3> */}
           <Link to="/">
             <img src="../img/banniere_kind_of_cool.jpg" alt="logo" />
           </Link>
         </div>
-
-        {/* <div className="navMain__center">
-          <Link to="/">
-            <img src="../img/banniere_kind_of_cool.jpg" alt="logo" />
-          </Link>
-        </div> */}
 
         <div className="navMain__right">
           <Link to="/">
