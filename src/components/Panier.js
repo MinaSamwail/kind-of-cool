@@ -17,7 +17,7 @@ const Panier = (cart) => {
       </div>
     );
   };
-  // condition
+
   if (cart.cart.line_items === undefined) {
     return <EmptyCard />;
   }
