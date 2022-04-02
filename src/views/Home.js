@@ -45,6 +45,7 @@ const Home = ({ products, onAddToCart }) => {
                     <div className="overlay">
                       <p className="text">{product.name}</p>
                       <p className="text-bloc">{product.price.raw}€</p>
+                      {/* new change */}
                       <p className="overlay__stockOut">Out of stock</p>
                     </div>
                   </Grid>
