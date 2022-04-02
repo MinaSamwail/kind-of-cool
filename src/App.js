@@ -62,7 +62,7 @@ function App() {
     fetchProducts();
     fetchCart();
   }, []);
-
+  //permet de trier les prix
   const triPrixCroissant = () => {
     const sortedDown = [...products].sort((articleA, articleB) => {
       return articleA.price.raw - articleB.price.raw;
