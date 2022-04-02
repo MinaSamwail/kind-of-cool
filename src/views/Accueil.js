@@ -10,12 +10,6 @@ function Accueil() {
           <h1>KIND OF COOL</h1>
           <h2>FRIP EN LIGNE</h2>
         </div>
-
-        {/* <div className="accueil__onglets">
-          <h2>categorie 1</h2>
-          <h2>categorie 2</h2>
-          <h2>categorie 3</h2>
-        </div> */}
       </aside>
       <div>
         <div className="accueil__categories">
