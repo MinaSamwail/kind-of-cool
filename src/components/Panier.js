@@ -5,7 +5,6 @@ import "../css/Panier.css";
 import LocalMallIcon from "@material-ui/icons/LocalMall";
 
 const Panier = (cart) => {
-  //empty card
   const isEmpty =
     Object.keys(cart.cart).length && cart.cart.line_items.length === 0;
 
